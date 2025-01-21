@@ -1,4 +1,4 @@
-# Diamond Clustering and Analysis
+# Description
 
 This project applies clustering techniques to analyze a dataset of diamonds, focusing on segmentation by price, weight, and quality characteristics. The goal is to identify premium, mid-range, and budget segments in the diamond market while providing insights into key features like cut, color, and clarity.
 
