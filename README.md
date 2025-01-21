@@ -4,27 +4,27 @@ This project applies clustering techniques to analyze a dataset of diamonds, foc
 
 # Features
 
-Data Cleaning and Preprocessing:
+- Data Cleaning and Preprocessing:
 
-Handles missing values using the most frequent value imputation.
-Normalizes numerical columns using StandardScaler.
-Encodes categorical variables using OneHotEncoder.
+  Handles missing values using the most frequent value imputation.
+  Normalizes numerical columns using StandardScaler.
+  Encodes categorical variables using OneHotEncoder.
 
-Clustering with K-Means:
+- Clustering with K-Means:
 
-Groups diamonds into three clusters based on combined numerical and categorical features.
-Segments the market into premium, mid-range, and budget categories.
+  Groups diamonds into three clusters based on combined numerical and categorical features.
+  Segments the market into premium, mid-range, and budget categories.
 
-Anomaly Detection:
+- Anomaly Detection:
 
-Uses IsolationForest to identify outliers in the dataset.
+  Uses IsolationForest to identify outliers in the dataset.
 
-Cluster Analysis:
+- Cluster Analysis:
 
-Calculates cluster summaries, including average price, weight, and other attributes.
-Visualizes clusters based on weight and price.
+  Calculates cluster summaries, including average price, weight, and other attributes.
+  Visualizes clusters based on weight and price.
 
-Qualitative Analysis:
+- Qualitative Analysis:
 
-Analyzes categorical features (Cut, Color, Clarity) across clusters.
-Visualizes the relationship between weight, price, and qualitative attributes.
+  Analyzes categorical features (Cut, Color, Clarity) across clusters.
+  Visualizes the relationship between weight, price, and qualitative attributes.
