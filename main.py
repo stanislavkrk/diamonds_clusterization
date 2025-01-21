@@ -8,7 +8,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
-# Завантаження та обробка даних
 def load_and_clean_data(file_path):
     '''
     strategy='most_frequent' -
@@ -23,7 +22,6 @@ def load_and_clean_data(file_path):
     return data
 
 
-# Попередня обробка
 def preprocess_data(data, numeric_columns, categorical_columns):
     '''
     Створюємо об'єкт ColumnTransformer, який дозволяє застосовувати різні перетворення
@@ -52,7 +50,6 @@ def preprocess_data(data, numeric_columns, categorical_columns):
     return preprocessor.fit_transform(data), preprocessor
 
 
-# Виконання K-Means кластеризації
 def perform_kmeans(data, n_clusters):
     '''
     Ця функція виконує кластеризацію даних за допомогою алгоритму K-Means
@@ -80,7 +77,6 @@ def perform_kmeans(data, n_clusters):
     return data
 
 
-# Виявлення аномалій
 def detect_anomalies(data, contamination=0.05):
     '''
     Це алгоритм, який виявляє аномалії шляхом ізоляції точок даних. Він базується на тому,
@@ -107,7 +103,6 @@ def detect_anomalies(data, contamination=0.05):
     return data
 
 
-# Резюме кластерів
 def summarize_clusters(data):
     '''
     Ця функція створює резюме кластерів, обчислюючи середні значення для всіх числових стовпців у кожному кластері.
@@ -125,7 +120,6 @@ def summarize_clusters(data):
     return data.groupby('Cluster').mean(numeric_only=True)
 
 
-# Отримання списку аномалій
 def get_anomalies(data):
     '''
     Ця функція виконує фільтрацію даних, щоб виділити всі об'єкти, які були визначені як аномалії.
@@ -134,7 +128,7 @@ def get_anomalies(data):
     '''
     return data[data['Anomaly'] == 'Anomaly']
 
-# Відновлення даних із нормалізованого формату до оригінального
+
 def inverse_transform_clusters(processed_data, preprocessor, original_data):
     """
     Відновлює дані кластерів в оригінальному масштабі та з початковими назвами колонок.
@@ -152,7 +146,7 @@ def inverse_transform_clusters(processed_data, preprocessor, original_data):
 
     return restored_data
 
-# Побудова графіку
+
 def plot_clusters(data, x_col, y_col, cluster_col, title, x_label, y_label):
     """
     Побудова графіка розподілу кластерів за двома характеристиками: ціна та вага.
@@ -176,7 +170,6 @@ def plot_clusters(data, x_col, y_col, cluster_col, title, x_label, y_label):
         plt.scatter(cluster_data[x_col], cluster_data[y_col],
                     label=f'Cluster {cluster}', alpha=0.6, color=palette[i])
 
-    # Налаштування графіка
     plt.title(title, fontsize=14)
     plt.xlabel(x_label, fontsize=12)
     plt.ylabel(y_label, fontsize=12)
